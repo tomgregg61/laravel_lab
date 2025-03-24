@@ -1,8 +1,9 @@
-version: '3'
+
 
 services:
   laravel:
     image: orchisltd/laravel:10
+    platform: linux/x86_64
     ports:
       - '${APP_PORT:-0}:80'
     volumes:
@@ -51,6 +52,7 @@ services:
 
   mailhog:
     image: 'mailhog/mailhog:latest'
+    platform: linux/x86_64
     ports:
       - '${HOST_MAILHOG_PORT:-0}:1025'
       - '${HOST_MAILHOG_DASHBOARD_PORT:-0}:8025'
